@@ -4,7 +4,7 @@
 
 因为公司项目众多，业务庞大，但各项目间拥有诸多重叠功能。所以以节约开发成本，提高代码整洁性和复用率为目的，开始进行本次微服务框架的调研和构建。本次调研仅针对前端，基于前端构建工具 **webpack5**  的新特性：**Module Federation** 开发完成。该技术可以实现项目间的组件共享，甚至是依赖库共享，不仅仅可以提高代码复用率，还大幅度节约了网络资源。故选择该技术作为未来前端项目开发的方式。
 
-附注：本项目基于 **Vue 3.0**，使用 **vue-cli 5.0 beta** 构建。
+附注：本项目基于 **Vue 3.0**，使用 **vue-cli 5.0 beta** 构建，本项目主要为学习和实验性质，如果对您有所帮助，请给颗星星，谢谢啦。
 
 ## 开发环境
 
@@ -40,7 +40,7 @@
 
 ------
 
-**1.**首先将运行环境和使用工具安装好，安装包参见安装环境所给链接即可，Windows Terminal 可以使用 Windows Store 傻瓜化安装；其中 **NodeJS** 和 **npm** 的验证方式如下：
+1.首先将运行环境和使用工具安装好，安装包参见安装环境所给链接即可，Windows Terminal 可以使用 Windows Store 傻瓜化安装；其中 **NodeJS** 和 **npm** 的验证方式如下：
 
 ```powershell
 PS C:\> node -v
@@ -52,7 +52,7 @@ PS C:\> npm -v
 6.14.14
 ```
 
-**2.**安装 **vue-cli**：
+2.安装 **vue-cli**：
 
 ```powershell
 PS C:\> npm install -g @vue/cli@next
@@ -62,14 +62,14 @@ PS C:\> npm install -g @vue/cli@next
 added 886 packages from 532 contributors in 69.062s
 ```
 
-**3.**检查 **vue-cli** 版本：
+3.检查 **vue-cli** 版本：
 
 ```powershell
 PS C:\> vue -V
 @vue/cli 5.0.0-beta.3
 ```
 
-**4.**构建项目，根目录用于包含所有前端项目，根目录内增加两个案例项目，新建一个目录作为根目录，使用 vue create 进行构建，如下：
+****4**.**构建项目，根目录用于包含所有前端项目，根目录内增加两个案例项目，新建一个目录作为根目录，使用 vue create 进行构建，如下：
 
 ```powershell
 PS D:\> vue create vue-mother-app
@@ -101,7 +101,7 @@ root
 
 **注意**：实际上模块联邦中，各项目都可以暴露自己的组件给其他项目，并没有一个真正的父子等级，我之所以按照这个思路来构建，目前为止是因为将所有公共组件暴露出来比较便于管理，也比较符合公司的需求。未来如果有变动，我会更新此处的文档。***考虑到可能发生的性能问题，可预期的未来此处将会有变化。***
 
-**5.**在 **vue-mother-app**下建立一个新的案例组件，命名为 **BlueBox**，相对路径如下：
+****5**.**在 **vue-mother-app**下建立一个新的案例组件，命名为 **BlueBox**，相对路径如下：
 
 ```powershell
 root\vue-mother-app\src\components\BlueBox\index.vue
@@ -141,7 +141,7 @@ export default {
 
 其暴露了一个示范参数 **welcomeWord** 可供使用，本地调用展示为一个蓝色盒子。没有实际作用，仅作为 **remote** 调用的一个范例存在。
 
-**5.**分别在两个项目的目录下新建 **vue.config.js**，用于自定义 **webpack** 配置。文件内容如下：
+5.分别在两个项目的目录下新建 **vue.config.js**，用于自定义 **webpack** 配置。文件内容如下：
 
 <!--./vue-mother-app/vue.conifg.js-->
 
