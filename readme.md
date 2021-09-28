@@ -69,7 +69,7 @@ PS C:\> vue -V
 @vue/cli 5.0.0-beta.3
 ```
 
-****4**.**构建项目，根目录用于包含所有前端项目，根目录内增加两个案例项目，新建一个目录作为根目录，使用 vue create 进行构建，如下：
+4**.**构建项目，根目录用于包含所有前端项目，根目录内增加两个案例项目，新建一个目录作为根目录，使用 vue create 进行构建，如下：
 
 ```powershell
 PS D:\> vue create vue-mother-app
@@ -101,7 +101,7 @@ root
 
 **注意**：实际上模块联邦中，各项目都可以暴露自己的组件给其他项目，并没有一个真正的父子等级，我之所以按照这个思路来构建，目前为止是因为将所有公共组件暴露出来比较便于管理，也比较符合公司的需求。未来如果有变动，我会更新此处的文档。***考虑到可能发生的性能问题，可预期的未来此处将会有变化。***
 
-****5**.**在 **vue-mother-app**下建立一个新的案例组件，命名为 **BlueBox**，相对路径如下：
+5**.**在 **vue-mother-app**下建立一个新的案例组件，命名为 **BlueBox**，相对路径如下：
 
 ```powershell
 root\vue-mother-app\src\components\BlueBox\index.vue
@@ -141,7 +141,7 @@ export default {
 
 其暴露了一个示范参数 **welcomeWord** 可供使用，本地调用展示为一个蓝色盒子。没有实际作用，仅作为 **remote** 调用的一个范例存在。
 
-5.分别在两个项目的目录下新建 **vue.config.js**，用于自定义 **webpack** 配置。文件内容如下：
+6.分别在两个项目的目录下新建 **vue.config.js**，用于自定义 **webpack** 配置。文件内容如下：
 
 <!--./vue-mother-app/vue.conifg.js-->
 
@@ -244,7 +244,7 @@ module.exports = {
 }
 ```
 
-6.在 **vue-sub-app** 的 about 页面下进行调用，调用代码如下：
+7.在 **vue-sub-app** 的 about 页面下进行调用，调用代码如下：
 
 <!--./vue-sub-app/src/views/About.vue-->
 
@@ -267,7 +267,7 @@ export default {
 </script>
 ```
 
-7.最后，使用 **windows terminal** 分别启动两个项目，如果没有异常，访问 http://localhost:3001 进入 **/about** 页面即可看到范例组件 **BlueBox**，并且参数被成功传入，蓝色盒子中应显示：
+8.最后，使用 **windows terminal** 分别启动两个项目，如果没有异常，访问 http://localhost:3001 进入 **/about** 页面即可看到范例组件 **BlueBox**，并且参数被成功传入，蓝色盒子中应显示：
 
 ```
 From Sub App Remote Component
